@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruitment Page</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url('img/bk.jpg'); /* Replace 'background.jpg' with your image file */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .container {
+        width: 80%;
+        margin: 100px auto;
+        text-align: center;
+        color: white;
+    }
+    
+    h1 {
+        font-size: 3em;
+        margin-bottom: 30px;
+    }
+    
+    input[type="text"] {
+        width: 60%;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        font-size: 1.2em;
+    }
+    
+    input[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+    
+    .tabs {
+        margin-top: 50px;
+    }
+    
+    .tab {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .tab:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+</style>
+<script>
+    function redirectToWebsite() {
+        // Get the value entered in the search bar
+        var searchQuery = document.getElementById("searchBar").value.toLowerCase();
+        
+        // Define the websites and their corresponding URLs
+        var websites = {
+            "linked in": "https://www.linkedin.com"
+            // Add more mappings here as needed
+        };
+
+        // Check if the entered search query matches any of the predefined keys
+        if (websites.hasOwnProperty(searchQuery)) {
+            // Redirect to the corresponding website
+            window.location.href = websites[searchQuery];
+        } else {
+            // If no match found, do nothing or show an error message
+            console.log("Website not found");
+            // You can customize this to display an error message to the user
+        }
+    }
+</script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to our Recruitment Page</h1>
+   
+        <input type="text" id="searchBar" name="search" placeholder="Search for jobs...">
+        <button onclick="redirectToWebsite()">Search</button>
+        <input type="submit" value="Search">
+    
+    <div class="tabs">
+        <a href="https://www.linkedin.com/" target="_blank" class="tab">LinkedIn</a>
+        <a href="https://www.monster.com/" target="_blank" class="tab">Monster</a>
+        <a href="https://www.indeed.com/" target="_blank" class="tab">Indeed</a>
+        <a href="https://www.glassdoor.com/"target="_blank" class="tab">Glassdoor</a>
+        <a href="https://www.careerbuilder.com/"target="_blank" class="tab">CareerBuilder</a>
+        <a href="https://www.ziprecruiter.com/"target="_blank" class="tab">ZipRecruiter</a>
+    </div>
+</div>
+
+</body>
+</html>
